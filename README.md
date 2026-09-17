@@ -71,7 +71,7 @@ If you use this code or the findings of this paper in your
 research, please cite:
 
 ```bibtex
-@article{yourname2025faa,
+@article{Muadh2026,
   title   = {Beyond the Cohort Mean: Measuring, Predicting, and Partly Mitigating Patient-Level Failure in Cross-Patient EEG Seizure Detection},
   author  = {Joshua Omorodion, Muadh Olamilekan, and Aalaa Rehman,},
   journal = {IEEE BigData 2026 - 9th Special Session on HealthCare Data.},
