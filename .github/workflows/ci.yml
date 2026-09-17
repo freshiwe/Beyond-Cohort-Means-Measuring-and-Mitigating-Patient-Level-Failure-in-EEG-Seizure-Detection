@@ -1,0 +1,85 @@
+
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Model shape test
+        run: |
+          python - <<'EOF'
+          import torch
+          import sys
+          sys.path.insert(0, 'src')
+          from model import FreqAwareCNNTransformer
+
+          model  = FreqAwareCNNTransformer(
+              n_channels=18, n_bands=4, embed_dim=128,
+              num_layers=2,  num_heads=4, num_classes=2,
+              dropout=0.3,
+          )
+          x      = torch.randn(2, 18, 512)   # 2s window at 256Hz
+          logits = model(x)
+
+          assert logits.shape == (2, 2), \
+              f"Expected (2,2), got {logits.shape}"
+
+          params = sum(p.numel() for p in model.parameters()
+                       if p.requires_grad)
+          assert params < 1_000_000, \
+              f"Model too large: {params:,} params"
+
+          print(f" Output shape : {logits.shape}")
+          print(f" Parameters   : {params:,}")
+          EOF
+
+      - name: Import test
+        run: |
+          python - <<'EOF'
+          from src.model import FreqAwareCNNTransformer
+          from src.training.focal_loss import FocalLoss
+          from src.training.trainer import run_epoch
+          from src.evaluation.metrics import evaluate, optimal_threshold
+          print(" All imports successful")
+          EOF
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install flake8
+      - run: |
+          flake8 src/ scripts/ \
+            --max-line-length=100 \
+            --ignore=E501,W503 \
+            --exclude=__pycache__
