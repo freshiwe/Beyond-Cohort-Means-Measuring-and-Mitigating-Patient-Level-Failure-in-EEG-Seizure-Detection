@@ -1,0 +1,31 @@
+{
+  "n": 24,
+  "note": "Partial Spearman computed via rank-based formula r_xy.z = (r_xy - r_xz*r_yz)/sqrt((1-r_xz^2)(1-r_yz^2)); p-value from t-test with df=n-3.",
+  "marginal": {
+    "seiz_vs_auc": {
+      "rho": -0.5867,
+      "p": 0.0026
+    },
+    "isi_vs_auc": {
+      "rho": 0.7191,
+      "p": 0.0001
+    },
+    "seiz_vs_isi": {
+      "rho": -0.6513,
+      "p": 0.0006
+    }
+  },
+  "partial": {
+    "seiz_vs_auc_given_isi": {
+      "rho": -0.2243,
+      "p": 0.3034,
+      "interpretation": "Seizure count vs AUC controlling for ISI. If p > 0.05, seizure count has no independent effect beyond ISI."
+    },
+    "isi_vs_auc_given_seiz": {
+      "rho": 0.5484,
+      "p": 0.0067,
+      "interpretation": "ISI vs AUC controlling for seizure count. If p < 0.05, ISI has independent predictive value beyond seizure count."
+    }
+  },
+  "conclusion": "Seizure count (marginal rho=-0.587, p=0.0026) and ISI (marginal rho=0.719, p=0.0001) are strongly co-correlated with each other (rho=-0.651, p=0.0006). After controlling for ISI, seizure count is no longer independently significant (partial rho=-0.224, p=0.3034). ISI remains independently predictive after controlling for seizure count (partial rho=0.548, p=0.0067). This suggests ISI is the more fundamental predictor; seizure count's apparent effect is largely mediated through ISI."
+}

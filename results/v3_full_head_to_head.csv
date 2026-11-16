@@ -1,0 +1,5 @@
+condition,n,mean_auc,std_auc,mean_f1
+full_v3,24,0.8544,0.1375,0.4138
+lean,24,0.8612,0.1498,0.4518
+
+# paired wilcoxon over 24 common patients: p(AUC)=0.1140 p(F1)=0.1280

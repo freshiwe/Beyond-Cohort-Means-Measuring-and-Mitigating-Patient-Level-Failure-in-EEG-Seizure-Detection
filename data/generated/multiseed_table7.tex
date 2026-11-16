@@ -1,0 +1,43 @@
+\begin{table}[H]
+\caption{Per-patient FATE AUC across five independent random seeds, 24 CHB-MIT
+  LOSO folds. $\mu_s$ = seed mean; $\sigma_s$ = seed SD ($R{=}5$);
+  CI$_{95}$ = 5000-replicate bootstrap confidence interval.
+  Hard-tail column counts how many of the 5 seeds placed the patient below
+  AUC 0.70. Patients with $\mu_s < 0.70$ are in bold.
+  ANOVA row: estimated between-patient and between-seed variance components
+  with $F$-statistic and $p$-value.}
+\label{tab:multiseed}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+Patient & $\mu_s$ & $\sigma_s$ & CI$_{95}$ & Hard-tail / 5 \\
+\midrule
+  \textbf{chb16} & \textbf{0.535} & 0.108 & [0.446,\,0.614] & 5/5 \\
+  \textbf{chb13} & \textbf{0.587} & 0.056 & [0.550,\,0.637] & 5/5 \\
+  \textbf{chb12} & \textbf{0.694} & 0.015 & [0.685,\,0.708] & 4/5 \\
+  chb08 & 0.725 & 0.094 & [0.650,\,0.791] & 1/5 \\
+  chb15 & 0.802 & 0.064 & [0.753,\,0.854] & 0/5 \\
+  chb06 & 0.820 & 0.054 & [0.781,\,0.866] & 0/5 \\
+  chb20 & 0.826 & 0.046 & [0.790,\,0.859] & 0/5 \\
+  chb14 & 0.836 & 0.040 & [0.812,\,0.872] & 0/5 \\
+  chb24 & 0.857 & 0.005 & [0.853,\,0.861] & 0/5 \\
+  chb21 & 0.878 & 0.048 & [0.842,\,0.917] & 0/5 \\
+  chb17 & 0.882 & 0.018 & [0.868,\,0.896] & 0/5 \\
+  chb10 & 0.892 & 0.055 & [0.843,\,0.930] & 0/5 \\
+  chb18 & 0.911 & 0.049 & [0.874,\,0.950] & 0/5 \\
+  chb01 & 0.925 & 0.026 & [0.904,\,0.945] & 0/5 \\
+  chb04 & 0.929 & 0.027 & [0.906,\,0.947] & 0/5 \\
+  chb05 & 0.951 & 0.015 & [0.938,\,0.962] & 0/5 \\
+  chb09 & 0.957 & 0.010 & [0.948,\,0.964] & 0/5 \\
+  chb19 & 0.966 & 0.010 & [0.958,\,0.973] & 0/5 \\
+  chb03 & 0.968 & 0.009 & [0.961,\,0.975] & 0/5 \\
+  chb11 & 0.973 & 0.014 & [0.962,\,0.985] & 0/5 \\
+  chb02 & 0.973 & 0.012 & [0.964,\,0.984] & 0/5 \\
+  chb07 & 0.980 & 0.006 & [0.975,\,0.985] & 0/5 \\
+  chb23 & 0.984 & 0.006 & [0.979,\,0.990] & 0/5 \\
+  chb22 & 0.994 & 0.002 & [0.992,\,0.995] & 0/5 \\
+\midrule
+  \textbf{ANOVA} & \multicolumn{4}{l}{$\hat\sigma^2_{\text{patient}} = 0.01517$, $\hat\sigma^2_{\text{seed}} = 0.00187$, ratio $= 8.1\times$, $F = 41.5$, $p = 6.05e-40$} \\
+\bottomrule
+\end{tabular}
+\end{table}
