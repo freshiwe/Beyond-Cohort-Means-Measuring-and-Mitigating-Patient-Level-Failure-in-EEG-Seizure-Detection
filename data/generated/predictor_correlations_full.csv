@@ -1,0 +1,6 @@
+feature,col,chb_rho,chb_p,chb_n,si_rho,si_p
+Seizure annotation count,seizure_annotation_count,-0.5866698344571005,0.002584101794367211,24,,
+Recording duration (h),recording_duration_h,0.46956521739130425,0.020609713704158844,24,,
+Interictal window count,interictal_window_count,0.46956521739130425,0.020609713704158844,24,,
+Mean seizure duration (s),mean_seizure_duration_s,0.3869565217391304,0.061759220209282026,24,,
+Inter-seizure interval (min),inter_seizure_interval_min,0.7191304347826086,7.504696733116017e-05,24,,

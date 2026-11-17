@@ -1,0 +1,48 @@
+{
+  "n": 38,
+  "n_chbmit": 24,
+  "n_siena": 14,
+  "n_hard": 10,
+  "ranking_auc": 0.48571428571428577,
+  "permutation_p_value": 0.3313373253493014,
+  "n_permutations": 500,
+  "null_mean": 0.42940000000000006,
+  "null_std": 0.14649328604800582,
+  "flagged_top_quartile": [
+    "PN06",
+    "PN10",
+    "PN17",
+    "chb02",
+    "chb11",
+    "chb12",
+    "chb17",
+    "chb18",
+    "chb23"
+  ],
+  "real_hard": [
+    "PN00",
+    "PN07",
+    "PN11",
+    "PN14",
+    "chb08",
+    "chb12",
+    "chb13",
+    "chb16",
+    "chb17",
+    "chb20"
+  ],
+  "overlap": [
+    "chb12",
+    "chb17"
+  ],
+  "features_used": [
+    "spectral_shift",
+    "mean_ictal_prob",
+    "score_entropy",
+    "line_length_mean",
+    "variance_mean",
+    "kurtosis_mean",
+    "embed_dist",
+    "bn_shift"
+  ]
+}

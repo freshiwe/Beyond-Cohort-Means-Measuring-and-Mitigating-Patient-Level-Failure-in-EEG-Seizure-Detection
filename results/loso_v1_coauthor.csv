@@ -1,0 +1,9 @@
+patient,auc,accuracy,protocol_note
+chb01,0.5854,0.8775,patient-adaptive LOSO
+chb02,0.7626,0.9009,patient-adaptive LOSO
+chb03,0.8797,0.8891,patient-adaptive LOSO
+chb04,0.9711,0.9186,patient-adaptive LOSO
+chb05,0.5860,0.7839,patient-adaptive LOSO
+chb24,0.8795,0.9324,patient-adaptive LOSO
+mean,0.7774,,
+std,0.1484,,

@@ -37,7 +37,7 @@ significantly lower than 1-component).
 
 Contrary to the conventional data-scarcity hypothesis,
 patients with *more* seizures are systematically harder to classify
-(Spearman ρ = −0.XX, p < 0.05). This suggests that
+(Spearman ρ = −0.59, p = 0.003, n = 24). This suggests that
 frequent-seizure patients in CHB-MIT are medication-refractory
 cases with heterogeneous ictal morphology that defeats
 population-level frequency priors.
